@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AppTaoLink</string>
+    <string name="apptitle">标题</string>
 </resources>
