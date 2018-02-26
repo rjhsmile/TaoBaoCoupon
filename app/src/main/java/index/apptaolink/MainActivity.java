@@ -19,6 +19,7 @@ import com.alibaba.baichuan.android.trade.page.AlibcMyOrdersPage;
 import com.alibaba.baichuan.trade.biz.core.taoke.AlibcTaokeParams;
 import com.alibaba.baichuan.trade.biz.login.AlibcLogin;
 import com.alibaba.baichuan.trade.biz.login.AlibcLoginCallback;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -91,8 +92,6 @@ public class MainActivity extends AppCompatActivity {
     public void logout() {
         AlibcLogin alibcLogin = AlibcLogin.getInstance();
         alibcLogin.logout( new AlibcLoginCallback() {
-
-
             @Override
             public void onSuccess(int i) {
                 Toast.makeText(MainActivity.this, "退出成功 ",
@@ -157,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
         alibcTaokeParams.extraParams = new HashMap<>();
         alibcTaokeParams.extraParams.put("taokeAppkey", "23272848");//一定要是淘宝联盟后台的appKey
 
-//        AlibcTaokeParams alibcTaokeParams = new AlibcTaokeParams("mm_48512871_8544703_28814507", "mm_48512871_8544703_28814507", null); // 若非淘客taokeParams设置为null即可
         //商品ID打开页面
         AlibcBasePage alibcBasePage = new AlibcDetailPage(taokeUrl);
         //商品链接打开页面
