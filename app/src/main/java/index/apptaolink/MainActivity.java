@@ -11,14 +11,15 @@ import android.widget.Toast;
 import com.ali.auth.third.login.callback.LogoutCallback;
 import com.alibaba.baichuan.android.trade.AlibcTrade;
 import com.alibaba.baichuan.android.trade.AlibcTradeSDK;
-import com.alibaba.baichuan.android.trade.adapter.login.AlibcLogin;
-import com.alibaba.baichuan.android.trade.callback.AlibcLoginCallback;
 import com.alibaba.baichuan.android.trade.model.AlibcShowParams;
-import com.alibaba.baichuan.android.trade.model.AlibcTaokeParams;
 import com.alibaba.baichuan.android.trade.model.OpenType;
 import com.alibaba.baichuan.android.trade.page.AlibcBasePage;
+import com.alibaba.baichuan.android.trade.page.AlibcDetailPage;
 import com.alibaba.baichuan.android.trade.page.AlibcMyOrdersPage;
 import com.alibaba.baichuan.android.trade.page.AlibcPage;
+import com.alibaba.baichuan.trade.biz.core.taoke.AlibcTaokeParams;
+import com.alibaba.baichuan.trade.biz.login.AlibcLogin;
+import com.alibaba.baichuan.trade.biz.login.AlibcLoginCallback;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,14 +39,16 @@ public class MainActivity extends AppCompatActivity {
         webView = (WebView) findViewById(R.id.webView);
 
         mtitle = (TextView) findViewById(R.id.title);
-        taokeUrl = "https://ai.m.taobao.com/search.html?q=%E7%94%B7%E8%A3%85&pid=mm_48512871_8544703_28814507";
+        //商品id
+        taokeUrl="523166400801";
+        //商品链接
+        //taokeUrl = "https://ai.m.taobao.com/search.html?q=%E7%94%B7%E8%A3%85&pid=mm_48512871_8544703_28814507";
     }
 
 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.card:
-                taokeUrl = "https://taoquan.taobao.com/framework/got_bonus.htm?spm=a314t.7853253.a2109.d1000369.NGOZ4z&tabIndex=1&nekot=1489471582487";
                 //淘宝打开连接
                 alibcShowParams = new AlibcShowParams(OpenType.Native, false);
                 alibcShowParams.setClientType("taobao_oscheme");
@@ -60,13 +63,13 @@ public class MainActivity extends AppCompatActivity {
                 AlibcTrade.show(this, alibcBasePage, alibcShowParams, null, exParams, new DemoTradeCallback());
                 break;
             case R.id.tmallwb:
-                //天猫打开连接
+                //天猫打开链接
                 alibcShowParams = new AlibcShowParams(OpenType.Native, false);
                 alibcShowParams.setClientType("tmall_scheme");
                 initdata();
                 break;
             case R.id.taowb:
-                //淘宝打开连接
+                //淘宝打开链接
                 alibcShowParams = new AlibcShowParams(OpenType.Native, false);
                 alibcShowParams.setClientType("taobao_scheme");
                 initdata();
@@ -89,9 +92,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public void logout() {
         AlibcLogin alibcLogin = AlibcLogin.getInstance();
-        alibcLogin.logout(this, new LogoutCallback() {
+        alibcLogin.logout( new AlibcLoginCallback() {
+
+
             @Override
-            public void onSuccess() {
+            public void onSuccess(int i) {
                 Toast.makeText(MainActivity.this, "退出成功 ",
                         Toast.LENGTH_LONG).show();
             }
@@ -107,9 +112,10 @@ public class MainActivity extends AppCompatActivity {
     private void Login() {
 
         AlibcLogin alibcLogin = AlibcLogin.getInstance();
-        alibcLogin.showLogin(this, new AlibcLoginCallback() {
+        alibcLogin.showLogin( new AlibcLoginCallback() {
+
             @Override
-            public void onSuccess() {
+            public void onSuccess(int i) {
                 Toast.makeText(MainActivity.this, "登录成功 ",
                         Toast.LENGTH_LONG).show();
             }
@@ -145,10 +151,21 @@ public class MainActivity extends AppCompatActivity {
          * @param tradeProcessCallback 交易流程的回调，必填，不允许为null；
          * @return 0标识跳转到手淘打开了, 1标识用h5打开,-1标识出错
          */
-        AlibcTaokeParams alibcTaokeParams = new AlibcTaokeParams("mm_48512871_8544703_28814507", "mm_48512871_8544703_28814507", null); // 若非淘客taokeParams设置为null即可
-//        AlibcBasePage alibcBasePage = new AlibcDetailPage(taokeUrl);
+
+        AlibcTaokeParams alibcTaokeParams = new AlibcTaokeParams(); // 若非淘客taokeParams设置为null即可
+        alibcTaokeParams.pid = "mm_48512871_11860020_43616333";
+        alibcTaokeParams.subPid = "mm_48512871_11860020_43616333";
+        alibcTaokeParams.adzoneid = "43616333";
+        alibcTaokeParams.extraParams = new HashMap<>();
+        alibcTaokeParams.extraParams.put("taokeAppkey", "23272848");//一定要是淘宝联盟后台的appKey
+
+//        AlibcTaokeParams alibcTaokeParams = new AlibcTaokeParams("mm_48512871_8544703_28814507", "mm_48512871_8544703_28814507", null); // 若非淘客taokeParams设置为null即可
+        //商品ID打开页面
+        AlibcBasePage alibcBasePage = new AlibcDetailPage(taokeUrl);
+        //商品链接打开页面
+//        AlibcPage alibcBasePage = new AlibcPage(taokeUrl);
         exParams.put("isv_code", "appisvcode");
-        AlibcTrade.show(this, webView, null, webChromeClient, new AlibcPage(taokeUrl), alibcShowParams, alibcTaokeParams, exParams, new DemoTradeCallback());
+        AlibcTrade.show(this, webView, null, webChromeClient, alibcBasePage, alibcShowParams, alibcTaokeParams, exParams, new DemoTradeCallback());
     }
 
 
