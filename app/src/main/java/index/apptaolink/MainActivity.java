@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         mtitle = (TextView) findViewById(R.id.title);
         //商品id
-        taokeUrl="523166400801";
+        taokeUrl = "539848591176";
         //商品链接
         //taokeUrl = "https://ai.m.taobao.com/search.html?q=%E7%94%B7%E8%A3%85&pid=mm_48512871_8544703_28814507";
     }
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void logout() {
         AlibcLogin alibcLogin = AlibcLogin.getInstance();
-        alibcLogin.logout( new AlibcLoginCallback() {
+        alibcLogin.logout(new AlibcLoginCallback() {
             @Override
             public void onSuccess(int i) {
                 Toast.makeText(MainActivity.this, "退出成功 ",
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     private void Login() {
 
         AlibcLogin alibcLogin = AlibcLogin.getInstance();
-        alibcLogin.showLogin( new AlibcLoginCallback() {
+        alibcLogin.showLogin(new AlibcLoginCallback() {
 
             @Override
             public void onSuccess(int i) {
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         alibcTaokeParams.subPid = "mm_48512871_11860020_43616333";
         alibcTaokeParams.adzoneid = "43616333";
         alibcTaokeParams.extraParams = new HashMap<>();
-        alibcTaokeParams.extraParams.put("taokeAppkey", "23272848");//一定要是淘宝联盟后台的appKey
+        alibcTaokeParams.extraParams.put("taokeAppkey", "23272848");//一定要是淘宝开放平台appKey
 
         //商品ID打开页面
         AlibcBasePage alibcBasePage = new AlibcDetailPage(taokeUrl);
