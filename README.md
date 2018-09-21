@@ -1,3 +1,5 @@
-# TaoBaoCoupon
-淘宝客api
+# 淘宝客APP-领取优惠券、高佣金、转链接
+希望对导购产品感兴趣会后台的小伙伴加入，让产品更完善~
+微信号：couponshop  一起交流~
+
 [超链接](http://jumtuan.com)
