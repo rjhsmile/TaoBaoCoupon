@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AppTaoLink.iml" filepath="$PROJECT_DIR$/AppTaoLink.iml" />
+      <module fileurl="file://D:\StudioWorkSpace\TaoBaoCoupon\AppTaoLink.iml" filepath="D:\StudioWorkSpace\TaoBaoCoupon\AppTaoLink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TaoBaoCoupon.iml" filepath="$PROJECT_DIR$/TaoBaoCoupon.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\StudioWorkSpace\TaoBaoCoupon\app\app.iml" filepath="D:\StudioWorkSpace\TaoBaoCoupon\app\app.iml" />
     </modules>
   </component>
 </project>
