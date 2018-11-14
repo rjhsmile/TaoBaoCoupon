@@ -30,4 +30,4 @@ Demo基础百川SDK只展示基本功能，功能如下：
 
 
 ### 效果图四：
-![](https://github.com/rjhsmile/TaoBaoCoupon/blob/master/app/src/main/res/drawable/.gif "效果图")
+![](https://github.com/rjhsmile/TaoBaoCoupon/blob/master/app/src/main/res/drawable/dd.gif "效果图")
