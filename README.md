@@ -17,17 +17,17 @@ Demo基础百川SDK只展示基本功能，功能如下：
 
 我自己在百川SDK基础上开发的，后台有小伙伴帮忙！
 
-###效果图一：
+### 效果图一：
 ![](https://github.com/rjhsmile/TaoBaoCoupon/blob/master/app/src/main/res/drawable/aa.gif "效果图")
 
 
-###效果图二：
+### 效果图二：
 ![](https://github.com/rjhsmile/TaoBaoCoupon/blob/master/app/src/main/res/drawable/bb.gif "效果图")
 
 
-###效果图三：
+### 效果图三：
 ![](https://github.com/rjhsmile/TaoBaoCoupon/blob/master/app/src/main/res/drawable/cc.gif "效果图")
 
 
-###效果图四：
+### 效果图四：
 ![](https://github.com/rjhsmile/TaoBaoCoupon/blob/master/app/src/main/res/drawable/.gif "效果图")
