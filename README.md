@@ -28,7 +28,7 @@
 
 暂未开放全部源码，开放基础功能，小伙伴自己开发~
 
-我自己在百川SDK基础上开发的，后台有小伙伴帮忙，合作请联系微信！
+我自己在百川SDK基础上开发的，后台有小伙伴帮忙，如有用欢迎Star！
 
 ### 效果图一：
 ![](https://github.com/rjhsmile/TaoBaoCoupon/blob/master/app/src/main/res/drawable/aa.gif "效果图")
