@@ -27,6 +27,7 @@
 
 ## 淘宝开放接口
 1、商品详情页接口(最新未封)
+
 http://h5api.m.taobao.com/h5/mtop.taobao.detail.getdesc/6.0/?data={%22id%22:%22536964823227%22}
 
 536964823227是商品ID
